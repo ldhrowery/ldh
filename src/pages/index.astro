@@ -57,8 +57,10 @@ const permalink = Astro.site.href;
     background-image: url('/assets/logo.webp');
     background-size: contain;
     background-repeat: no-repeat;
+    display: block;
+    min-height: 250px;
   }
-  
+
   :global(.dark) .hero-image-themed {
     background-image: url('/assets/logo-dark.webp');
   }
