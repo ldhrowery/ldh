@@ -69,42 +69,42 @@ const permalink = `${Astro.site.href}serwis`;
       <table>
     <thead>
       <tr>
-        <th>Obsługiwane systemy</th>
+        <th>Obsługiwane Marki rowerowe</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Bosch</td>
+        <td>Gazelle</td>
       </tr>
       <tr>
-        <td>Shimano Steps</td>
+        <td>Sparta</td>
       </tr>
       <tr>
-        <td>ION</td>
+        <td>Koga</td>
       </tr>
       <tr>
-        <td>Fit 1.0 oraz 2.0</td>
+        <td>Batavus</td>
       </tr>
       <tr>
-        <td>Panasonic</td>
+        <td>Flyer</td>
       </tr>
       <tr>
-        <td>Innergy</td>
+        <td>Prophete</td>
       </tr>
       <tr>
-        <td>Impulse</td>
+        <td>Kalkhoff</td>
       </tr>
       <tr>
-        <td>BMZ</td>
+        <td>Victoria</td>
       </tr>
       <tr>
-        <td>Bafang</td>
+        <td>Diamant</td>
       </tr>
       <tr>
-        <td>BMZ</td>
+        <td>KTM</td>
       </tr>
       <tr>
-        <td>BROSE</td>
+        <td>CUBE</td>
       </tr>
    </tbody>
   </table>
@@ -134,28 +134,32 @@ const permalink = `${Astro.site.href}serwis`;
   table {
     width: 100%;
     border-collapse: collapse;
-    font-family: var(--font-heading); /* Używamy Fira Sans z poprzedniego kroku */
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-family: var(--font-heading);
+    /* Używamy półprzezroczystego tła lub zmiennej, jeśli ją masz */
+    background: var(--background-color, #fff); 
+    border: 1px solid var(--border-color, #ddd);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: var(--text-color, #222); /* Zapewnia, że tekst reaguje na motyw */
   }
 
-  th, td {
+  td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color, #eee);
+    /* To wymusi kolor tekstu zgodny z motywem strony */
+    color: inherit; 
   }
 
   th {
-    background-color: #222; /* Ciemny motyw pasujący do serwisu */
-    color: #fff;
+    background-color: #222; /* Nagłówek zostaje ciemny */
+    color: #fff;            /* Tekst w nagłówku zawsze biały */
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 1px;
   }
 
-  tr:hover {
-    background-color: #f9f9f9;
+ tr:hover {
+    background-color: rgba(128, 128, 128, 0.1);
   }
 
   /* Responsywność */
