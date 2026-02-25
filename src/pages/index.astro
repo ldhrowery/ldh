@@ -37,6 +37,7 @@ const permalink = Astro.site.href;
 
   .home-copy {
     flex: 1;
+    padding-right: 2em;
     padding: 0 1em;
   }
 
@@ -57,7 +58,8 @@ const permalink = Astro.site.href;
   }
 
   .hero-image-themed {
-  width: 550px;
+    width: 100%;                   /* Teraz obrazek będzie elastyczny */
+    width: 550px;
     height: 466px;
     background-image: url('/assets/logo.webp');
     background-size: contain;
@@ -95,10 +97,10 @@ const permalink = Astro.site.href;
   }
 
   @media (max-width: 800px) {
-    .hero-image-themed {
-      width: 300px;
-      height: 250px;
-      margin: 0 auto;
+    .home-container {
+      flex-direction: column-reverse; /* Obrazek nad tekstem na mobile */
+      text-align: center;
+      margin-top: 1em;
     }
   }
 
@@ -107,5 +109,13 @@ const permalink = Astro.site.href;
       padding-bottom: 2em;
       text-align: center;
   }
+  .home-copy h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-image-themed {
+      height: 300px;               /* Mniejszy obrazek na telefonach */
+      background-position: center;
+    }
   
 </style>
