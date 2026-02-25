@@ -50,9 +50,10 @@ const permalink = Astro.site.href;
     font-size: 1.4em;
   }
 
-  .hero-image-container {
-    margin: 0 1em;
-    text-align: center;
+ .hero-image-container {
+    flex: 1;                       /* Obrazek zajmuje połowę dostępnego miejsca */
+    display: flex;
+    justify-content: flex-end;     /* Dosunięcie obrazka do prawej krawędzi */
   }
 
   .hero-image-themed {
