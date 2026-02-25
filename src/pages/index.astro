@@ -26,43 +26,45 @@ const permalink = Astro.site.href;
     align-items: center;
     display: flex;
     flex: 1;
-    justify-content: space-between; /* Zmieniono z center na space-between */
-    margin: 2em auto;              /* Dodano auto dla centrowania kontenera */
+    justify-content: space-between;
+    margin: 2em auto;
     min-height: 400px;
-    width: 100%;                   /* Wymuszenie pełnej szerokości */
-    max-width: 1200px;             /* Maksymalna szerokość treści */
+    width: 100%;
+    max-width: 1200px;
   }
 
   .home-copy {
+    /* To pozwoli tekstowi zająć dostępną przestrzeń po lewej */
     flex: 1;
-    padding-right: 2em;
-    padding: 0 1em;
+    padding: 0 2em 0 0;
+    text-align: left;
   }
 
   .home-copy h1 {
+    font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 0.5em;
-    line-height: 1.3;
+    line-height: 1.2;
   }
 
   .home-copy p {
     font-size: 1.4em;
+    margin: 0.4em 0;
   }
 
- .hero-image-container {
-    flex: 1;                       /* Obrazek zajmuje połowę dostępnego miejsca */
+  .hero-image-container {
+    flex: 1;
     display: flex;
-    justify-content: flex-end;     /* Dosunięcie obrazka do prawej krawędzi */
+    justify-content: flex-end;
   }
 
   .hero-image-themed {
-    width: 100%;                   /* Teraz obrazek będzie elastyczny */
     width: 550px;
     height: 466px;
     background-image: url('/assets/logo.webp');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center; /* Dodane dla lepszego centrowania */
+    background-position: center right;
     display: block;
   }
 
@@ -70,50 +72,43 @@ const permalink = Astro.site.href;
     background-image: url('/assets/logo-dark.webp');
   }
 
-  .hero-image-container picture {
-    display: block;
-    min-height: 250px;
-  }
-
-  .caption {
-    font-size: .8em;
-    font-style: italic;
-    text-align: left;
-  }
-
-  .hero-image {
-    width: 100%;
-    max-width: 550px;
-    margin-bottom: 1em;
-  }
-
-@media (max-width: 1200px) {
+  /* Responsywność dla laptopów/tabletów */
+  @media (max-width: 1200px) {
+    .home-copy h1 {
+      font-size: 2.8rem;
+    }
     .hero-image-themed {
-      width: 400px;
-      height: 340px; /* Proporcjonalnie mniej */
+      width: 450px;
+      height: 380px;
     }
   }
 
-  @media (max-width: 800px) {
+  /* Responsywność dla telefonów */
+  @media (max-width: 900px) {
     .home-container {
-      flex-direction: column-reverse; /* Obrazek nad tekstem na mobile */
+      flex-direction: column-reverse;
       text-align: center;
       margin-top: 1em;
     }
-  }
 
- .home-copy {
-      flex: 0;
-      padding-bottom: 2em;
+    .home-copy {
+      flex: 0; /* Tutaj flex: 0 jest OK, bo na mobile chcemy dopasowanie do treści */
+      padding: 2em 0;
       text-align: center;
-  }
-  .home-copy h1 {
-      font-size: 2.5rem;
+    }
+
+    .home-copy h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-image-container {
+      justify-content: center;
     }
 
     .hero-image-themed {
-      height: 300px;               /* Mniejszy obrazek na telefonach */
+      width: 300px;
+      height: 250px;
       background-position: center;
     }
-  
+  }
 </style>
