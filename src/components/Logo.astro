@@ -1,39 +1,19 @@
 <style>
-  img {
+img {
     display: block;
     width: 150px;
+    transition: filter 0.3s ease; /* Płynne przejście koloru */
   }
 
-  .logo-dark {
-    display: none;
+  :global(.theme-dark) img {
+    filter: invert(1) brightness(2);
   }
 
-  :global(.theme-dark) .logo-dark {
-    display: block;
+  @media screen and (max-width: 520px) {
+    img { display: none; }
   }
-
-@media screen and (max-width: 520px) {
-    /* Ukrywamy oba logotypy na małych ekranach */
-    .logo-light, .logo-dark {
-      display: none;
-    }
-  }
-  
 </style>
 
 <a href="/">
-  <img 
-    alt="LDH Rowery Logo" 
-    src="/assets/logo1.webp" 
-    class="logo-light" 
-    width="150" 
-    height="100" 
-  />
-  <img 
-    alt="LDH Rowery Logo" 
-    src="/assets/logo1-dark.webp" 
-    class="logo-dark" 
-    width="150" 
-    height="100" 
-  />
+  <img alt="LDH Rowery Logo" src="/assets/logo1.webp" width="150" height="100" />
 </a>
