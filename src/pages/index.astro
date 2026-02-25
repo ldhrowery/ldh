@@ -16,10 +16,7 @@ const permalink = Astro.site.href;
     </div>
 
     <div class="hero-image-container">
-      <picture>
-        <source srcset="/assets/logo.webp" media="(min-width: 600px)">
-        <img class="hero-image" alt="logo" src="/assets/logo.webp" width="550" height="466">
-      </picture>
+      <div class="hero-image-themed"></div>
     </div>
   </div>
 </BaseLayout>
@@ -52,6 +49,18 @@ const permalink = Astro.site.href;
   .hero-image-container {
     margin: 0 1em;
     text-align: center;
+  }
+
+  .hero-image-themed {
+    width: 550px;
+    height: 466px;
+    background-image: url('/assets/logo.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  :global(.dark) .hero-image-themed {
+    background-image: url('/assets/logo-dark.webp');
   }
 
   .hero-image-container picture {
