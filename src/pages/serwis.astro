@@ -18,13 +18,27 @@ const permalink = `${Astro.site.href}serwis`;
         <a href="https://icons8.com/illustrations" target="_blank" rel="noopener">Ouch!</a>
       </figcaption>
     </figure>
-    <p>Wykonujemy usługi serwisowe związane z przeglądami i naprawą rowerów elektrycznych.</p>
-    <p></p>
-    <p>You really think you can fly that thing? You know what? It is beets. I've crashed into a beet truck. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Is this my espresso machine? Wh-what is-h-how did you get my espresso machine?</p>
-    <p>Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Hey, take a look at the earthlings. Goodbye! I was part of something special. Just my luck, no ice. You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Jaguar shark! So tell me - does it really exist? This thing comes fully loaded. AM/FM radio, reclining bucket seats, and... power windows. Yes, Yes, without the oops! You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Yes, Yes, without the oops! Do you have any idea how long it takes those cups to decompose. They're using our own satellites against us. And the clock is ticking. Do you have any idea how long it takes those cups to decompose. My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard!</p>
-  </div>
+      <table>
+    <thead>
+      <tr>
+        <th>System</th>
+        <th>Diagnostyka</th>
+        <th>Części</th>
+        <th>Naprawa silnika</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bosch eBike</td>
+        <td>Pełna (v4.0)</td>
+        <td>Dostępne</td>
+        <td>Tak</td>
+        <td>Aktywny</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
 </BaseLayout>
 
 <style>
@@ -43,6 +57,46 @@ const permalink = `${Astro.site.href}serwis`;
     .about-image {
       float: none;
       margin: 0 auto 2em;
+    }
+  }
+  .table-container {
+    width: 100%;
+    overflow-x: auto; /* Zapewnia responsywność na telefonach */
+    margin: 2rem 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-heading); /* Używamy Fira Sans z poprzedniego kroku */
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  th {
+    background-color: #222; /* Ciemny motyw pasujący do serwisu */
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  /* Responsywność */
+  @media (max-width: 600px) {
+    th, td {
+      padding: 0.5rem;
+      font-size: 0.9rem;
     }
   }
 </style>
