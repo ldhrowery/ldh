@@ -4,13 +4,36 @@
     width: 150px;
   }
 
-  @media screen and (max-width: 520px) {
-    img {
+  .logo-dark {
+    display: none;
+  }
+
+  :global(.theme-dark) .logo-dark {
+    display: block;
+  }
+
+@media screen and (max-width: 520px) {
+    /* Ukrywamy oba logotypy na małych ekranach */
+    .logo-light, .logo-dark {
       display: none;
     }
   }
+  
 </style>
 
 <a href="/">
-  <img alt="Blog Logo" src="/assets/logo1.webp" width="150" height="100" />
+  <img 
+    alt="LDH Rowery Logo" 
+    src="/assets/logo1.webp" 
+    class="logo-light" 
+    width="150" 
+    height="100" 
+  />
+  <img 
+    alt="LDH Rowery Logo" 
+    src="/assets/logo1-dark.webp" 
+    class="logo-dark" 
+    width="150" 
+    height="100" 
+  />
 </a>
