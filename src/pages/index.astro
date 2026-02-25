@@ -23,12 +23,16 @@ const permalink = Astro.site.href;
 
 <style>
   .home-container {
+    .home-container {
     align-items: center;
     display: flex;
     flex: 1;
-    justify-content: center;
-    margin: 2em 0;
+    justify-content: space-between; /* Zmieniono z center na space-between */
+    margin: 2em auto;              /* Dodano auto dla centrowania kontenera */
     min-height: 400px;
+    width: 100%;                   /* Wymuszenie pełnej szerokości */
+    max-width: 1200px;             /* Maksymalna szerokość treści */
+  }
   }
 
   .home-copy {
